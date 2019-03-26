@@ -2,6 +2,8 @@
 
 ![alt text](https://www.rabbitmq.com/img/RabbitMQ-logo.svg)
 
+![npm](https://img.shields.io/npm/v/npm.svg)
+
 # Hapi server with RabbitMQ (dockerized)
 ARQ example with hapi server and RabbitMQ
 
