@@ -1,4 +1,5 @@
 ![alt text](https://hapijs.com/public/img/logo.svg)
+
 ![alt text](https://www.rabbitmq.com/img/RabbitMQ-logo.svg)
 
 # Hapi server with RabbitMQ (dockerized)
