@@ -1,4 +1,7 @@
-# Hapi server with RabbitMQ (dockerize)
+![alt text](https://www.rabbitmq.com/img/RabbitMQ-logo.svg)
+![alt text](https://hapijs.com/)
+
+# Hapi server with RabbitMQ (dockerized)
 ARQ example with hapi server and RabbitMQ
 
 ## Deploy environment
@@ -19,3 +22,4 @@ sudo docker-compose up
         "message": "hello kike"
     }
  ```
+
