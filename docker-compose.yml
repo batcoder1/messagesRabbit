@@ -1,0 +1,65 @@
+version: '3'
+
+services:
+  # rabbitMQ server container
+
+  apiserver:
+    container_name: apiserver
+    restart: always
+    # Environment variable file
+    env_file: .env
+    build:
+      # Current folder is root folder
+      context: .
+      # Path of dockerfile
+      dockerfile: ./dockers/apiserver/Dockerfile
+      args:
+        - NODE_ENV=local
+    # Evolupay api binging ports
+    volumes:
+      - .:/opt/app    
+    ports:
+      - "8000:8000"
+    # Network settings  
+    networks:
+      app_net:
+        ipv4_address: "10.5.0.2"
+ 
+    # apiserver container needs to start after rabbitmq container   
+    depends_on:
+      - rabbitmq
+    environment:
+      - NODE_ENV=local   
+
+  rabbitmq:
+    container_name: rabbitmq
+    restart: always
+    # Environment variable file
+    env_file: .env
+    build:
+      # Current folder is root folder
+      context: ./dockers/rabbitmq
+      # Path of dockerfile
+      dockerfile: ./Dockerfile
+      args:
+        - NODE_ENV=local
+    # Evolupay api binging ports
+    volumes:
+      - .:/opt/app    
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    # Network settings  
+    networks:
+      app_net:
+        ipv4_address: "10.5.0.3"
+# Create network in order to connect each docker containers      
+networks:
+  app_net:
+    driver: bridge
+    ipam:
+      driver: default
+      # Subnnet CIDR address
+      config:
+        - subnet: 10.5.0.0/16
+         

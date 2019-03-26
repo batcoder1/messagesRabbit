@@ -1,0 +1,30 @@
+{
+  "name": "messagesrabbit",
+  "version": "1.0.0",
+  "description": "chat with rabbitMQ",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --exist",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wooltar/messagesRabbit.git"
+  },
+  "keywords": [
+    "RabbitMQ",
+    "nodejs",
+    "javascript"
+  ],
+  "author": "Enrique Rubio Sanchez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wooltar/messagesRabbit/issues"
+  },
+  "homepage": "https://github.com/wooltar/messagesRabbit#readme",
+  "dependencies": {
+    "amqp": "^0.2.7",
+    "hapi": "^18.1.0",
+    "nodemon": "^1.18.10"
+  }
+}
